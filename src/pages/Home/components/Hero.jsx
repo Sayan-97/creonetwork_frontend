@@ -12,8 +12,8 @@ const Hero = () => {
             <div className='lg:w-3/4 lg:mr-8 space-y-6'>
                 <h1 className='text-6xl font-customBold leading-tight'>AI Powered Marketplace<br /> for Gamers.</h1>
                 <p className='lg:w-[90%] xl:w-[70%] text-lg'>Welcome to the future of game development with our cutting-edge gamelancer marketplace that leverages the power of artificial intelligence (AI) and blockchain technology! Our platform brings together talented game developers from around the world, providing a seamless and secure environment for them to connect, collaborate, and create the next generation of games.</p>
-                <div className='flex gap-6'>
-                    <div className='w-[40%] bg-primaryGradient p-[1.6px] xl:p-[1px] rounded-customSmall'>
+                <div className='flex max-md:flex-col gap-6'>
+                    <div className='md:w-[40%] bg-primaryGradient p-[1.6px] xl:p-[1px] rounded-customSmall'>
                         <input 
                             type="text"
                             placeholder='Enter your email'

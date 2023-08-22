@@ -6,6 +6,7 @@ import {
     AIBg,
     LearnBg
 } from '../../../assets/images'
+import Button from '../../../components/Button'
 
 const ForEveryone = () => {
     return (
@@ -20,6 +21,15 @@ const ForEveryone = () => {
                 className={`justify-items-center text-center`}
             />
             <p className='lg:w-[80%] mx-auto text-lg text-center'>If you're looking for a trustworthy and efficient freelance marketplace, Creo Network is the platform for you. With our use of blockchain technology and AI algorithms, we ensure secure transactions and the perfect match for freelancers and employers.</p>
+            <div className='flex items-center justify-center gap-6'>
+                {['Find Work', 'Find Talent'].map((item, index) => (
+                    <Button
+                        key={index}
+                        content={item}
+                        className={`px-8 py-2.5 ${index === 1 ? 'bg-primaryBg' : ''}`}
+                    />
+                ))}
+            </div>
             <div className='w-full grid grid-cols-10 grid-rows-2 gap-4'>
                 <div
                     className='col-span-10 lg:col-span-4 row-span-2 bg-accentColor rounded-customLarge p-8 space-y-16 overflow-hidden'

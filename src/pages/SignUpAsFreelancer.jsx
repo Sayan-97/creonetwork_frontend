@@ -1,12 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BlankAvatarImg } from '../assets/images'
 import { HiPlus } from 'react-icons/hi'
 import { Button } from '../components'
 import { useDispatch } from 'react-redux'
-import { setClient, setFreelancer } from '../redux/reducers/userStateReducer'
+import { setUserType } from '../redux/reducers/userSlice'
 
 const SignUpAsFreelancer = () => {
 
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const UserSvg = () => (
@@ -30,9 +32,14 @@ const SignUpAsFreelancer = () => {
     const language = ['English', 'Dutch', 'Spanish']
     const proficiency = ['Beginner', 'Intermediate', 'Advanced']
 
+    const handleSubmit = () => {
+        dispatch(setUserType('freelancer'))
+        navigate('/userID/findwork')
+    }
+
     return (
         <section>
-            <form 
+            <form
                 className='lg:w-[55%] mx-auto bg-accentColor p-4 md:p-12 rounded-customLarge space-y-6'
             >
                 <div className='space-y-3'>
@@ -48,12 +55,12 @@ const SignUpAsFreelancer = () => {
                         </div>
                         {/* Avatar */}
                         <div className='grid justify-items-center space-y-4'>
-                            <img 
-                                src={BlankAvatarImg} 
-                                alt="img" 
+                            <img
+                                src={BlankAvatarImg}
+                                alt="img"
                                 className='w-32 rounded-full object-cover'
                             />
-                            <Button 
+                            <Button
                                 content={
                                     <><HiPlus className='text-xl' />Upload Photo</>
                                 }
@@ -156,7 +163,7 @@ const SignUpAsFreelancer = () => {
                 <Button
                     type={`submit`}
                     content={`Sign Up`}
-                    task={() => dispatch(setFreelancer())}
+                    task={handleSubmit}
                 />
             </form>
         </section>

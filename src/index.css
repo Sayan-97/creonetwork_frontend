@@ -41,16 +41,14 @@ section{
   py-14
 }
 
-label{
-  @apply
-  text-lg
-
-}
-
 input,
 button{
   @apply
   outline-none
+}
+
+label {
+  @apply text-lg
 }
 
 input,
@@ -59,8 +57,8 @@ textarea{
   @apply
   p-2
   rounded-customSmall
-  outline-none
   text-black
+  text-lg
 }
 
 /* Custom CSS Classes */
